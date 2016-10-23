@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'top#home'
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
   devise_for :users
   resources :topics
   # The priority is based upon order of creation: first created -> highest priority.
