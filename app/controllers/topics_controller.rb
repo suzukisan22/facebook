@@ -12,6 +12,8 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @comment = @topic.comments.build
+    @comments = @topic.comments
   end
 
   # GET /topics/new
@@ -30,7 +32,7 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        format.html { redirect_to @topic, notice: '新規投稿の保存に成功しました。' }
         format.json { render :show, status: :created, location: @topic }
       else
         format.html { render :new }
@@ -44,7 +46,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to @topic, notice: '投稿の更新に成功しました。' }
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }
