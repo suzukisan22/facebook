@@ -15,6 +15,30 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+    respond_to do |format|
+      format.html { redirect_to topic_path(@topic) }
+      format.js { render :edit }
+    end
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+    respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to topic_path(@topic), notice: 'コメントの更新に成功しました。'}
+        format.js { render :index }
+      else
+        format.html { render :new }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   def destroy
     @comment = Comment.find(params[:id])
     @topic = @comment.topic
