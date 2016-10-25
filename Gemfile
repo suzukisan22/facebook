@@ -47,6 +47,8 @@ end
 
 group :development do
   gem 'letter_opener_web'
+
+  gem 'dotenv-rails'
 end
 
 gem 'rails_12factor', group: :production
@@ -56,3 +58,10 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 
 gem 'faker'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+
+#image uploader
+gem 'carrierwave'
+gem 'rmagick'
