@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
 
+  resources :users, only: [:index]
+
+  resources :relationships, only: [:create, :destroy]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
-
-  devise_scope :user do
-    root to: "devise/sessions#new"
   end
 
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  root 'topics#index'
+
   resources :topics do
     resources :comments
   end
