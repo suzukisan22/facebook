@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-
-  root 'top#home'
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
+  devise_scope :user do
+    root to: "devise/sessions#new"
   end
 
   devise_for :users, controllers: {
