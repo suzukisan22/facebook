@@ -60,4 +60,8 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy
   end
 
+  def friend
+    followed_users & followers
+  end
+
 end

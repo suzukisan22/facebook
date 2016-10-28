@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:index]
+
+
+  authenticated :user do
+    resources :users, only: [:index, :show]
+  end
+
 
   resources :relationships, only: [:create, :destroy]
 
@@ -14,6 +19,7 @@ Rails.application.routes.draw do
   }
 
   root 'topics#index'
+
 
   resources :topics do
     resources :comments
