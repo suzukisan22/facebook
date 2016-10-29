@@ -4,11 +4,6 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  authenticated :user do
-    resources :users, only: [:index, :show]
-  end
-
-
   resources :relationships, only: [:create, :destroy]
 
   if Rails.env.development?
@@ -19,6 +14,8 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  resources :users, only: [:index, :show]
 
   root 'topics#index'
 

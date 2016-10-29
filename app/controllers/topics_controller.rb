@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.where("user_id = ? or user_id = ?", current_user.id, current_user.friend)
+    @topics = Topic.where(user_id: [current_user.id, current_user.friend])
     @users = User.all
   end
 
