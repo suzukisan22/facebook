@@ -32,8 +32,7 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: '新規投稿の保存に成功しました。' }
-        format.json { render :show, status: :created, location: @topic }
+        format.html { redirect_to root_path, notice: '新規投稿の保存に成功しました。' }
       else
         format.html { render :new }
         format.json { render json: @topic.errors, status: :unprocessable_entity }

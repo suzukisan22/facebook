@@ -65,3 +65,5 @@ gem 'omniauth-twitter'
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
+
+gem "font-awesome-rails"

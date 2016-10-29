@@ -7,3 +7,27 @@
   max-height: 300px;
   margin: 15px auto;
 }
+
+.user-top img,
+.friend-top img {
+  width: 50px;
+  height: 50px;
+}
+
+/* friend */
+
+
+.friend-area {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.friend-area a:hover {
+  background: none;
+  text-decoration: none;
+  color: #333;
+}
+
+.friend-area p {
+  margin-top: 10px;
+}
