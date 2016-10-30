@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
+
     # 10文字以上のメッセージがあるとき
     if @messages.length > 10
       @over_ten = true

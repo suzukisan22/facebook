@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @friends = @user.friend
+    @user_friends = @user.friend
+    @current_user_friends = current_user.friend
   end
 end

@@ -1,13 +1,19 @@
 <h3><%= @user.name %>の友達リスト</h3>
-<% @friends.each do |friend| %>
-  <div class="col-xs-6">
-   <div class="friend-area">
-      <%= link_to user_path(friend.id), class: "friend-top" do %>
-        <%= profile_img(friend) %>
-        <%= friend.name %>
-      <% end %><br>
-      <p>友達<%= friend.friend.count %>人</p>
-
+<% @user_friends.each do |friend| %>
+  <% if friend.id != current_user.id %>
+    <div class="col-xs-6 mt20">
+     <div class="friend-area">
+        <%= link_to user_path(friend.id), class: "friend-top" do %>
+          <%= profile_img(friend) %>
+          <%= friend.name %>
+        <% end %><br>
+        <% @current_user_friends.each do |c_friend| %>
+          <% if friend.id == c_friend.id %>
+            <%= link_to 'メッセージを送る', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post'%>
+          <% end %>
+        <% end %>
+        <p>友達<%= friend.friend.count %>人</p>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
