@@ -5,6 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do |n|
+  content = Faker::Hacker.say_something_smart
+  user_id = n + 1
+  topic_id = 11 - n
+  Comment.create!(
+               user_id: user_id,
+               topic_id: topic_id,
+               content: content
+               )
+end
+
 10.times do |n|
   email = Faker::Internet.email
   uid = Faker::Code.ean
@@ -26,16 +38,5 @@ end
   Topic.create!(title: title,
                content: content,
                user_id: user_id
-               )
-end
-
-10.times do |n|
-  content = Faker::Hacker.say_something_smart
-  user_id = n
-  topic_id = n
-  Comment.create!(
-               user_id: user_id,
-               topic_id: topic_id,
-               content: content
                )
 end
