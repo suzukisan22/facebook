@@ -1,5 +1,5 @@
 <h2>ログイン</h2>
-<p><%= notice %>
+<p class="flash"><%= notice %><%= alert %></p>
 <div class="form-area">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">

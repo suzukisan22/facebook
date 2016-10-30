@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.except-sm {
+  display: block;
+}
+
 .new-post a {
   color: #fff;
 }
@@ -50,4 +55,49 @@ a.topic-top:hover {
   text-decoration: none;
   background-color: #F5F5F5;
   color: #333;
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+  background-color: #fff;
+}
+.sm-only {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  span.icon-bar {
+    background-color: #fff;
+  }
+  .sm-only {
+    display: block;
+  }
+  .except-sm {
+    display: none;
+  }
+  header .top-nav li a{
+    color : #fff;
+  }
+  header .top-nav li a:hover {
+    background: none;
+    opacity: 0.7;
+  }
+  ul.top-nav li.except-sm {
+    display: none;
+  }
+  #header-img img {
+    margin-top: 10px;
+  }
+  .feed-action .dropdown {
+    text-align: right;
+    margin: 0px;
+    position: relative;
+    .dropdown-toggle:hover {
+      background: none;
+    }
+    .caret {
+      position: absolute;
+      top: -50px;
+      right: 20px;
+    }
+  }
 }

@@ -35,3 +35,19 @@
 .mt20 {
   margin-top: 20px;
 }
+
+.user-info {
+  margin-top: 20px;
+  height: 150px;
+  .user-top:hover {
+    background: none;
+    color: #333;
+  }
+  li {
+    list-style-type: none;
+  }
+  li .item a:hover {
+    background: none;
+    color: #333;
+  }
+}

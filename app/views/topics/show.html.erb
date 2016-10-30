@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="child row">
+<div class="child">
   <div class="wrapper">
     <div class="topic-text">
       <p class="left"><strong>タイトル</strong></p>
@@ -15,12 +15,12 @@
     <div id="comments_list">
       <%= render partial: 'comments/index', locals: { comments: @comments, topic: @topic } %>
     </div>
-    <div id="comment_form">
+    <div id="comment_form" class="mb30">
       <%= render partial: 'comments/form', locals: { comment: @comment, topic: @topic } %>
     </div>
     <% if current_user.id == @topic.user_id %>
-      <%= link_to '編集', edit_topic_path(@topic) %> |
+      <%= link_to '投稿を編集', edit_topic_path(@topic), class: 'btn btn-warning btn-block' %>
     <% end %>
-    <%= link_to '戻る', topics_path %>
+      <%= link_to '戻る', topics_path, class: 'btn btn-default btn-block' %>
   </div>
 </div>
