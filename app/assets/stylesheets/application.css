@@ -37,6 +37,7 @@
  .header-icon {
    color: #fff;
    margin-top: 5px;
+   margin-left: 15px;
  }
 .header-icon:visited {
   color: #fff;
@@ -61,4 +62,7 @@
    width: 30px;
    height: 30px;
    margin-right: 10px;
+ }
+ .collapse {
+   background-color: #5f7ebf;
  }
