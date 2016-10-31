@@ -65,6 +65,10 @@ a.topic-top:hover {
 }
 
 @media screen and (max-width: 767px) {
+  /* header */
+  .collapse {
+    background-color: #5f7ebf;
+  }
   span.icon-bar {
     background-color: #fff;
   }
