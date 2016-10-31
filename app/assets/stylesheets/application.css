@@ -15,51 +15,41 @@
  *= require font-awesome
  */
 
- body {
-   background-color: #E9EBEE;
- }
+body {
+ background-color: #E9EBEE;
+}
 
- header {
-   background-color: #3B5998;
- }
- header a:hover{
-   background-color: #3B5998;
- }
- .header-title,  .header-title:active, .header-title:visited,
- #header-name, #header-name:active, #header-name:hover, #header-name:visited{
-    color: #fff;
- }
-
- .top-nav .dropdown a:hover {
-   background-color: #3B5998;
- }
-
- .header-icon {
-   color: #fff;
-   margin-top: 5px;
-   margin-left: 15px;
- }
-.header-icon:visited {
+header {
+ background-color: #3B5998;
+}
+header a:hover{
+ background-color: #3B5998;
+}
+.header-title,  .header-title:active, .header-title:visited,
+#header-name, #header-name:active, #header-name:hover, #header-name:visited{
   color: #fff;
 }
-.header-icon:hover {
-  text-decoration: none;
+
+.top-nav .dropdown a:hover {
+ background-color: #3B5998;
 }
- .nav>li>a.to-edit {
-   height: 100%;
-   padding-bottom: 35px;
- }
- .nav>li>a.to-edit:hover {
-   background-color: #3B5998;
-   opacity: 0.8;
- }
 
- #header-name {
-   padding-top: 5px;
- }
-
- #header-img img{
-   width: 30px;
-   height: 30px;
-   margin-right: 10px;
- }
+.header-icon {
+ color: #fff;
+ margin-top: 5px;
+ margin-left: 15px;
+}
+.header-icon:visited {
+color: #fff;
+}
+.header-icon:hover {
+text-decoration: none;
+}
+.nav>li>a.to-edit {
+ height: 100%;
+ padding-bottom: 35px;
+}
+.nav>li>a.to-edit:hover {
+ background-color: #3B5998;
+ opacity: 0.8;
+}

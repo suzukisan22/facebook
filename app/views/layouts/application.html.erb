@@ -41,7 +41,7 @@
             </li>
           <% end %>
           <li class="dropdown">
-            <div class="sm-menu sm-only">
+            <ul class="sm-menu sm-only">
               <% if user_signed_in? %>
             　  <li><%= link_to 'ユーザー一覧', users_path %></li>
                 <li><%= link_to '友達一覧', user_path(current_user.id) %></li>
@@ -52,9 +52,10 @@
                 <li><%= link_to 'ログイン', new_user_session_path %></li>
                 <li><%= link_to 'サインアップ', new_user_registration_path %></li>
               <% end %>
-            </div>
-            <a href="#" class="dropdown-toggle except-sm" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="caret sm-only"></span>
+            </ul>
+          </li>
+            <a href="#" class="dropdown-toggle except-sm header-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               <% if user_signed_in? %>
