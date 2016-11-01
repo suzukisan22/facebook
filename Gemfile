@@ -67,3 +67,5 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem "font-awesome-rails"
+
+gem 'fog'
