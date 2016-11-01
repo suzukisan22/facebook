@@ -9,7 +9,7 @@
 10.times do |n|
   content = Faker::Hacker.say_something_smart
   user_id = n + 1
-  topic_id = 11 - n
+  topic_id = n + 2
   Comment.create!(
                user_id: user_id,
                topic_id: topic_id,
