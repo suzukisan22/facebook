@@ -21,9 +21,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-  root 'topics#index'
-
-
   resources :topics do
     resources :comments
   end
