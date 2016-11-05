@@ -59,6 +59,10 @@ end
 
 gem 'rails_12factor', group: :production
 
+group :production do
+  gem 'pg'
+end
+
 gem 'devise'
 
 gem 'twitter-bootstrap-rails'
