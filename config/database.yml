@@ -82,4 +82,4 @@ production:
   <<: *default
   database: facebook_production
   username: facebook
-  host: http://52.199.30.117/
+  host: 52.199.30.117
