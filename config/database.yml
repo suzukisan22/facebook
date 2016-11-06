@@ -84,4 +84,3 @@ production:
   username: facebook
   password: <%= ENV['FACEBOOK_DATABASE_PASSWORD'] %>
   host: 52.199.30.117
-  encoding: utf8
