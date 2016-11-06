@@ -22,13 +22,15 @@ end
   uid = Faker::Code.ean
   password = "password"
   name = Faker::Internet.user_name
-  User.create!(
-  email: email,
-  password: password,
-  password_confirmation: password,
-  name: name,
-  uid: uid
+  user = User.new(
+    email: email,
+    password: password,
+    password_confirmation: password,
+    name: name,
+    uid: uid
   )
+  user.skip_confirmation!
+  user.save
 end
 
 10.times do |n|
