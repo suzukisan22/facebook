@@ -25,6 +25,11 @@ class MessagesController < ApplicationController
     end
 
     @message = @conversation.messages.build
+
+    # 他人の会話を見られないようにする
+    if @conversation.sender_id != current_user.id && @conversation.recipient_id != current_user.id
+      redirect_to authenticated_root_path, notice: '他人のメッセージを閲覧することはできません。'
+    end
   end
 
   def create
